@@ -1,0 +1,27 @@
+extends layout
+
+block content
+  h1=title
+
+  form(method='POST' action='')
+    div.form-group
+      label(for='site_name') Site Name:
+      input#first_name.form-control(type='text', placeholder='Site Name' name='site_name' required='true' value=(undefined===unps ? '' : unps.site_name) )
+      label(for='url') URL:
+      input#family_name.form-control(type='text', placeholder='URL' name='url' required='true' value=(undefined===unps ? '' : unps.url))
+      label(for='username') Username:
+      input#family_name.form-control(type='text', placeholder='Username' name='username' required='true' value=(undefined===unps ? '' : unps.username))
+      label(for='password') Password:
+      input#family_name.form-control(type='text', placeholder='Password' name='password' required='true' value=(undefined===unps ? '' : unps.password))
+      label(for='account_number') Account Number:
+      input#family_name.form-control(type='text', placeholder='Account Number' name='account_number' required='false' value=(undefined===unps ? '' : unps.account_number))
+      label(for='info') Info:
+      textarea#family_name.form-control(name='info', cols="30", rows="10" )=(undefined === unps? '' : unps.info)
+      label(for='security_questions') Security Questions:
+      textarea#family_name.form-control(name='security_questions', cols="30", rows="10" )=(undefined === unps? '' : unps.security_questions)
+    button.btn.btn-primary(type='submit') Submit
+
+  if errors
+    ul
+      for error in errors
+        li!= error.msg

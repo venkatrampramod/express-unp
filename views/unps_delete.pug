@@ -1,0 +1,13 @@
+extends layout
+
+block content
+
+  h1 #{title}: #{unps.site_name}
+
+  p Do you really want to delete this Author?
+
+  form(method='POST' action='')
+    div.form-group
+    input#authorid.form-control(type='hidden',name='id', required='true', value=unps._id )
+
+    button.btn.btn-primary(type='submit') Delete

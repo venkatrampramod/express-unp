@@ -1,0 +1,17 @@
+extends layout
+
+block content
+  h2 #{unps.site_name}
+  hr
+  p #[strong URL:]
+    a(href=unps.urlToUnp) #{unps.url}
+  p #[strong Username:] #{unps.username}
+  p #[strong Password:] #{unps.password}
+  p #[strong Security Questions:] #{unps.security_questions}
+  p #[strong Info:] #{unps.info}
+
+  hr
+  p
+    a(href=unps.urlToUnp+'/delete') Delete
+  p
+    a(href=unps.urlToUnp+'/update') Update

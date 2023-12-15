@@ -1,0 +1,22 @@
+extends layout
+
+block content
+  h1= title
+
+  table.table
+    tr
+      th site_name
+      th site_url
+    tbody
+      each unps in unps_list
+        tr
+          td 
+            a(href=unps.urlToUnp) #{unps.site_name}
+          td #{unps.url}
+          td
+            a(href=unps.urlToUnp+'/update') Update/Edit
+          td
+            a(href=unps.urlToUnp+'/delete') Delete
+
+  
+
